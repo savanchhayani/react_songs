@@ -1,0 +1,66 @@
+@import "~bootstrap/scss/bootstrap";
+
+.content-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.carousel.slide {
+
+  .carousel-caption {
+    position: unset;
+    margin-top: 80px;
+  }
+
+  .carousel-control-prev,
+  .carousel-control-next,
+  .carousel-indicators {
+    display: none;
+  }
+}
+
+.container {
+  margin-top: 40px;
+}
+
+.four-info-images {
+  > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    i {
+      color: white;
+      font-size: 50px;
+    }
+
+    .title, .sub-title {
+      color: white;
+    }
+
+    .title {
+      font-size: 12px;
+      margin-top: 10px;
+    }
+
+    .sub-title {
+      font-size: 10px;
+      margin-top: 5px;
+    }
+  }
+}
+
+.buttons-row {
+  justify-content: center;
+
+  button {
+    min-width: 150px;
+  }
+  .sign-up {
+    margin-right: 70px;
+  }
+}
