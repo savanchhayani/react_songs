@@ -1,10 +1,17 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import Images from "../utils/images";
+import Album from './Album';
 
-const Play = () => <i className='fa fa-play-circle play' aria-hidden='true'></i>;
-const Pause = () => <i className='fa fa-pause-circle pause' aria-hidden='true'></i>;
-const Download = () => <i className='fa fa-download download' aria-hidden='true'></i>;
+const Play = () => (
+  <i className='fa fa-play-circle play' aria-hidden='true'></i>
+);
+const Pause = () => (
+  <i className='fa fa-pause-circle pause' aria-hidden='true'></i>
+);
+const Download = () => (
+  <i className='fa fa-download download' aria-hidden='true'></i>
+);
 
 const Song = ({ isPlaying, name, time }) => (
   <div className='song border-bottom'>
@@ -63,13 +70,33 @@ class BottomView extends React.PureComponent {
           { isPlaying: false, name: `Let's talk`, time: "30:43" },
           { isPlaying: false, name: `Let's talk`, time: "30:43" },
           { isPlaying: false, name: `Let's talk`, time: "30:43" },
-          { isPlaying: false, name: `Let's talk`, time: "30:43" },
+          { isPlaying: false, name: `Let's talk`, time: "30:43" }
         ]
-      }
+      },
+      albums: [
+        {
+          cover: Images.albums.weeknd_cover,
+          profile: Images.profiles.weeknd,
+          title: "The Weeknd Starboy",
+          text: `A modern twist on journal`
+        },
+        {
+          cover: Images.albums.weeknd_cover,
+          profile: Images.profiles.weeknd,
+          title: "The Weeknd Starboy",
+          text: `A modern twist on journal`
+        },
+        {
+          cover: Images.albums.weeknd_cover,
+          profile: Images.profiles.weeknd,
+          title: "The Weeknd Starboy",
+          text: `A modern twist on journal`
+        },
+      ]
     };
   }
   render() {
-    const { album } = this.state;
+    const { album, albums } = this.state;
 
     return (
       <Container>
@@ -79,13 +106,17 @@ class BottomView extends React.PureComponent {
           </Col>
           <Col sm={12} md={6} className='mb-5'>
             <Row>
-              <Col>
+              <Col sm={12}>
                 <h1> Data comes here</h1>
               </Col>
             </Row>
             <Row>
-              <Col>
-                <h1> Data comes here</h1>
+              <Col sm={12}>
+                <Row className='albums'>
+                  {albums.map(album => (
+                    <Album {...album} xs={12} sm={12} md={6} lg={4} />
+                  ))}
+                </Row>
               </Col>
             </Row>
           </Col>
