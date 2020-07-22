@@ -1,6 +1,7 @@
 import React from "react";
-import { Container, Card, Button, Row, Col } from "react-bootstrap";
+import { Container, Row } from "react-bootstrap";
 import Images from "../utils/images";
+import Album from './Album';
 
 class Recommended extends React.PureComponent {
   constructor(props) {
@@ -53,25 +54,7 @@ class Recommended extends React.PureComponent {
 
         <Row className='albums'>
           {albums.map(album => (
-            <Col className='mb-4' xs={12} sm={6} md={4} lg={3}>
-              <div className='app-card-view album'>
-                <div className='image-container'>
-                  <img className='cover' src={album.cover} alt='' />
-                  <img className='profile' src={album.profile} alt='' />
-                </div>
-
-                <div className='details'>
-                  <div>
-                    <div className='title'>{album.title}</div>
-                    <div className='text'>{album.text}</div>
-                  </div>
-
-                  <div>
-                    <i class="fa fa-plus" aria-hidden="true"></i>
-                  </div>
-                </div>
-              </div>
-            </Col>
+            <Album { ...album } xs={12} sm={6} md={4} lg={3} />
           ))}
         </Row>
       </Container>
