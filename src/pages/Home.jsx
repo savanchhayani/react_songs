@@ -1,6 +1,7 @@
 import React from "react";
 import CarouselTop from '../components/CarouselTop';
 import Recommended from '../components/Recommended';
+import BottomView from '../components/BottomView';
 
 class Home extends React.Component {
   render() {
@@ -8,6 +9,7 @@ class Home extends React.Component {
       <div className='home-page'>
         <CarouselTop />
         <Recommended />
+        <BottomView />
       </div>
     );
   }

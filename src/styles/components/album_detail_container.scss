@@ -1,0 +1,63 @@
+div.album-with-details-container {
+  $padding: 25px;
+
+  div.detail {
+    padding: $padding;
+    display: flex;
+
+    div.image-container {
+      margin-right: 25px;
+      width: 50%;
+
+      img {
+        border-radius: 25px;
+        width: 100%;
+      }
+    }
+
+    div.singer-info {
+      .name {
+        font-size: 1rem;
+      }
+
+      .other {
+        font-size: 0.8rem;
+      }
+    }
+  }
+
+  div.songs-list {
+    overflow-y: auto;
+    max-height: 400px;
+
+    .song {
+      display: flex;
+      justify-content: space-between;
+      padding: 0 $padding;
+      height: 50px;
+      scroll-behavior: smooth;
+
+      > div {
+        display: flex;
+        align-items: center;
+
+        .fa {
+          font-size: 1.5rem;
+        }
+      }
+
+      > div:first-child {
+        .play,
+        .pause {
+          margin-right: 15px;
+        }
+      }
+
+      > div:last-child {
+        .time {
+          margin-left: 25px;
+        }
+      }
+    }
+  }
+}
