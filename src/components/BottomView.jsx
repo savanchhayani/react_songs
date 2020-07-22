@@ -92,7 +92,11 @@ class BottomView extends React.PureComponent {
           { isPlaying: false, name: `Let's talk`, time: "30:43" },
           { isPlaying: false, name: `Let's talk`, time: "30:43" },
           { isPlaying: false, name: `Let's talk`, time: "30:43" },
-          { isPlaying: false, name: `Let's talk`, time: "30:43" }
+          { isPlaying: false, name: `Let's talk`, time: "30:43" },
+          { isPlaying: false, name: `Let's talk`, time: "30:43" },
+          { isPlaying: false, name: `Let's talk`, time: "30:43" },
+          { isPlaying: false, name: `Let's talk`, time: "30:43" },
+          { isPlaying: false, name: `Let's talk`, time: "30:43" },
         ]
       },
       albums: [
@@ -122,19 +126,19 @@ class BottomView extends React.PureComponent {
 
     return (
       <Container>
-        <Row>
+        <Row className='bottom-view'>
           <Col sm={12} md={6} className='mb-5'>
             <AlbumWithDetails album={album} />
           </Col>
 
-          <Col sm={12} md={6} className='mb-5'>
-            <Row>
-              <Col className='mb-4' sm={12}>
+          <Col sm={12} md={6} className='mb-5 other-views'>
+            <Row className='about-row mb-4'>
+              <Col className='about-col' sm={12}>
                 <AboutShow />
               </Col>
             </Row>
 
-            <Row>
+            <Row className='albums-row'>
               <Col sm={12}>
                 <Row className='albums'>
                   {albums.map(album => (
