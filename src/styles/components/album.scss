@@ -1,0 +1,49 @@
+div.albums {
+  div.album {
+    div.image-container {
+      position: relative;
+
+      img.cover {
+        width: 100%;
+        border-top-left-radius: $app-cv-border-radius;
+        border-top-right-radius: $app-cv-border-radius;
+      }
+    }
+
+    img.profile {
+      $position: 15px;
+      position: absolute;
+      right: $position;
+      top: $position;
+      height: 20%;
+      border-radius: 50%;
+    }
+  }
+
+  div.details {
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+
+    > div:first-child {
+      .title {
+        font-weight: bold;
+        font-size: 0.7rem;
+      }
+
+      .text {
+        font-size: 0.5rem;
+      }
+    }
+
+    > div:last-child {
+      background: lightgray;
+      border-radius: 50%;
+      width: 25px;
+      height: 25px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}

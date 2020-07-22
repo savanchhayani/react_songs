@@ -1,11 +1,13 @@
 import React from "react";
 import CarouselTop from '../components/CarouselTop';
+import Recommended from '../components/Recommended';
 
 class Home extends React.Component {
   render() {
     return (
-      <div>
+      <div className='home-page'>
         <CarouselTop />
+        <Recommended />
       </div>
     );
   }

@@ -2,8 +2,8 @@ import React from "react";
 import { Carousel, Row, Col, Container, Button } from "react-bootstrap";
 import Images from "../utils/images";
 
-const CustomCol = ({ title, subTitle }) => (
-  <Col xs={12} md={3}>
+const CustomCol = ({ title, subTitle, ...props }) => (
+  <Col xs={12} md={3} { ...props }>
     <i class='fa fa-address-book' aria-hidden='true'></i>
     <div className='title'>{title}</div>
     <div className='sub-title'>{subTitle}</div>
@@ -11,12 +11,37 @@ const CustomCol = ({ title, subTitle }) => (
 );
 
 class CarouselTop extends React.PureComponent {
+  constructor(props) {
+    super(props);
+      this.state = {
+        lists: [
+          {
+            title: 'Spend time Smart',
+            subTitle: 'Lorem impsum dolor sit amet',
+          },
+          {
+            title: 'Spend time Smart',
+            subTitle: 'Lorem impsum dolor sit amet',
+          },
+          {
+            title: 'Spend time Smart',
+            subTitle: 'Lorem impsum dolor sit amet',
+          },
+          {
+            title: 'Spend time Smart',
+            subTitle: 'Lorem impsum dolor sit amet',
+          }
+        ]
+      }
+  }
   render() {
+    const { lists } = this.state;
+
     return (
       <Carousel>
         <Carousel.Item>
           <img
-            className='d-block w-100'
+            className='top-cover d-block w-100'
             src={Images.landingCarousal}
             alt='First slide'
           />
@@ -28,22 +53,11 @@ class CarouselTop extends React.PureComponent {
 
             <Container>
               <Row className='four-info-images'>
-                <CustomCol
-                  title='Spend time Smart'
-                  subTitle='Lorem impsum dolor sit amet'
-                />
-                <CustomCol
-                  title='Spend time Smart'
-                  subTitle='Lorem impsum dolor sit amet'
-                />
-                <CustomCol
-                  title='Spend time Smart'
-                  subTitle='Lorem impsum dolor sit amet'
-                />
-                <CustomCol
-                  title='Spend time Smart'
-                  subTitle='Lorem impsum dolor sit amet'
-                />
+                {
+                  lists.map((item) => (
+                    <CustomCol { ...item } className='mb-4' />
+                  ))
+                }
               </Row>
             </Container>
 

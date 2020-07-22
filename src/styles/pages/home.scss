@@ -1,0 +1,24 @@
+.home-page {
+  @extend .mb-5;
+}
+
+
+@include media-breakpoint-down(xs) {
+  .content-container {
+    .buttons-row {
+      margin: 10px 0px;
+      button {
+        margin-right: 0px;
+        margin-bottom: 10px;
+        width: 100%;
+      }
+    }
+  }
+}
+
+@include media-breakpoint-down(sm) {
+  .top-cover {
+    height: 1000px;
+    object-fit: none;
+  }
+}
