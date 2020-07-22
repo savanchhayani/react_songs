@@ -1,7 +1,7 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import Images from "../utils/images";
-import Album from './Album';
+import Album from "./Album";
 
 const Play = () => (
   <i className='fa fa-play-circle play' aria-hidden='true'></i>
@@ -23,6 +23,28 @@ const Song = ({ isPlaying, name, time }) => (
     <div>
       <Download />
       <div className='time'>{time}</div>
+    </div>
+  </div>
+);
+
+const AboutShow = () => (
+  <div className='about-container app-card-view'>
+    <img src={Images.albums.pc_cover} alt='' />
+
+    <div className='item-detail-container'>
+      <div className='detail'>
+        <h5>About Show</h5>
+        <p>
+          n publishing and graphic design, Lorem ipsum is a placeholder text
+          commonly used to demonstrate the visual form of a document or a
+          typeface without relying on meaningful content
+        </p>
+      </div>
+
+      <div className='next-detail'>
+        <h5>Next Episode</h5>
+        <p>Every Monday, 7:00 o'clock</p>
+      </div>
     </div>
   </div>
 );
@@ -91,7 +113,7 @@ class BottomView extends React.PureComponent {
           profile: Images.profiles.weeknd,
           title: "The Weeknd Starboy",
           text: `A modern twist on journal`
-        },
+        }
       ]
     };
   }
@@ -104,12 +126,14 @@ class BottomView extends React.PureComponent {
           <Col sm={12} md={6} className='mb-5'>
             <AlbumWithDetails album={album} />
           </Col>
+
           <Col sm={12} md={6} className='mb-5'>
             <Row>
-              <Col sm={12}>
-                <h1> Data comes here</h1>
+              <Col className='mb-4' sm={12}>
+                <AboutShow />
               </Col>
             </Row>
+
             <Row>
               <Col sm={12}>
                 <Row className='albums'>

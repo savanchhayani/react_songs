@@ -1,0 +1,15 @@
+.about-container {
+  img {
+    width: 100%;
+    border-top-left-radius: $app-cv-border-radius;
+    border-top-right-radius: $app-cv-border-radius;
+  }
+
+  div.item-detail-container {
+    padding: 25px;
+
+    p {
+      font-size: 0.7rem;
+    }
+  }
+}
